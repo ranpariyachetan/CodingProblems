@@ -2,66 +2,141 @@ using System;
 
 namespace CodingProblems
 {
-    public class AlmostIncreasingArray {
-       public static bool almostIncreasingSequence(int[] sequence) {
-
-    // If the Length is 2 , We can reomve any element to make the sequence strictly increasing sequance
-    if(sequence.Length ==2)
+    public class AlmostIncreasingArray
     {
-         return true;
-    }
-
-    // counter to track the sequances
-    int counterOne = 0;
-    int counterTwo = 0;
-
-    for(int i = 0 ; i < sequence.Length -1 ; i++)
-    {
-        // compare the immediate items to check if they are in sequence. 
-        if(sequence[i] >= sequence[i+1])
+        public static bool almostIncreasingSequence(int[] sequence)
         {
-            counterOne++;
-        }
-        if(i != 0)
-        {
-            // remove/skip the element to see if we are getting increasing sequance
-            if(sequence[i-1] >= sequence[i+1])
+            // If the Length is 2 , We can reomve any element to make the sequence strictly increasing sequance
+            if (sequence.Length == 2)
             {
-                counterTwo++;
+                return true;
             }
-        }
-    }
 
-    // check if there were only one item to remove for making the sequance strictly increasing.
-    if(counterOne == 1 && counterTwo <= 1 )
-       return true;
-    else 
-       return false;
-}
+            // counter to track the sequances
+            int counterOne = 0;
+            int counterTwo = 0;
 
-bool almostIncreasingSequenceV3(int[] sequence) {
-    if (sequence.Length <= 1) {
-        return true;
-    }
-    int[] checker = new int[sequence.Length];
-    for (int i = 0; i < sequence.Length; ++i) {
-        checker[i] = 1;
-    }
-    for (int i = 0; i < sequence.Length; ++i) {
-        for (int j = Math.Max(0, i - 2); j < i; ++j) {
-            if (sequence[i] > sequence[j]) {
-                checker[i] = Math.Max(checker[i], checker[j] + 1);
+            for (int i = 0; i < sequence.Length - 1; i++)
+            {
+                // compare the immediate items to check if they are in sequence. 
+                if (sequence[i] >= sequence[i + 1])
+                {
+                    counterOne++;
+                }
+                if (i != 0)
+                {
+                    // remove/skip the element to see if we are getting increasing sequance
+                    if (sequence[i - 1] >= sequence[i + 1])
+                    {
+                        counterTwo++;
+                    }
+                }
             }
+
+            // check if there were only one item to remove for making the sequance strictly increasing.
+            if (counterOne == 1 && counterTwo <= 1)
+                return true;
+            else
+                return false;
         }
-    }
-    int count = 1;
-    for (int i = 0; i < sequence.Length; ++i) {
-        count = Math.Max(count, checker[i]);
-    }
-    return count >= sequence.Length - 1;
-}
 
+        bool almostIncreasingSequenceV3(int[] sequence)
+        {
+            if (sequence.Length <= 1)
+            {
+                return true;
+            }
+            int[] checker = new int[sequence.Length];
+            for (int i = 0; i < sequence.Length; ++i)
+            {
+                checker[i] = 1;
+            }
+            for (int i = 0; i < sequence.Length; ++i)
+            {
+                for (int j = Math.Max(0, i - 2); j < i; ++j)
+                {
+                    if (sequence[i] > sequence[j])
+                    {
+                        checker[i] = Math.Max(checker[i], checker[j] + 1);
+                    }
+                }
+            }
+            int count = 1;
+            for (int i = 0; i < sequence.Length; ++i)
+            {
+                count = Math.Max(count, checker[i]);
+            }
+            return count >= sequence.Length - 1;
+        }
+    
+        public static bool CheckAlmostIncreasingArray(int[] arr)
+        {
+            int change = 0;
 
+            if(arr.Length <=2)
+            {
+                return true;
+            }
+
+            if(arr[0] > arr[1])
+            {
+                arr[0] = arr[1] / 2;
+                change++;
+            }
+
+            for(int i = 1; i<arr.Length - 1;i++)
+            {
+                if((arr[i - 1] < arr[i] && arr[i+1] < arr[i])
+                    || (arr[i-1] > arr[i] && arr[i + 1] > arr[i]))
+                    {
+                        arr[i] = (arr[i - 1] + arr[i + 1]) / 2;
+
+                        if(arr[i] == arr[i - 1] || arr[i] == arr[i + 1])
+                        {
+                            return false;
+                        }
+
+                        change++;
+                    }
+            }
+
+            if(arr[arr.Length-1] < arr[arr.Length - 2]) 
+            {
+                change++;
+            }
+
+            if(change > 1)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool CheckSequence(int[] arr) 
+        {
+            if(arr.Length <=2)
+            {
+                return true;
+            }
+
+            int change = 0;
+
+            for(int i = 0;i<arr.Length - 1;i++)
+            {
+                if(arr[i] >= arr[i+1])
+                {
+                    change ++;
+                }
+
+                if(change >= 2)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
 

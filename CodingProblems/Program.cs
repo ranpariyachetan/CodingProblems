@@ -14,12 +14,31 @@ namespace CodingProblems
             // int[][] pairs = new int[][] {new int[]{2,6}, new int[]{3,5},new int[]{0,1}, new int[]{2,9}, new int[]{5,6}};
             // var maxGCD = warehouse.EvaluateCost(10, pairs );
 
-            int[] arr1 = new int[] {2, 3};
-            int[] arr2 = new int[] {2};
+            // int[] arr1 = new int[] {2, 3};
+            // int[] arr2 = new int[] {2};
 
-            var maxGCD = WarehouseCost.LargestIntersection(arr1, arr2);
+            // var maxGCD = WarehouseCost.LargestIntersection(arr1, arr2);
             // Console.WriteLine(input.Sum());
             // Console.WriteLine(string.Join(',', input));
+
+            // var arr = new int []{2, 3, 4, 8, 6, 10, 9, 12};
+
+            // var maxGCD = AlmostIncreasingArray.CheckSequence(arr);
+
+            // var arr = new int[] {1, 5, 4, 3};
+
+            // var maxGCD = MaxWaterInContainer.FindContainerWithMaxWater(arr);
+
+            // var r =     1534236469;
+            // var maxGCD = MaxWaterInContainer.ReverseNumber(r);
+
+            // var powers = new int[]{4, 2, 8 ,3, 5};
+            // var maxGCD = MultiProcessor.MinimumTimeFoFinish(powers, 19);
+
+            var path = "SSLLSS";
+
+            var maxGCD = Robot.IsCirclePath(path);
+
            Console.WriteLine(maxGCD);
         }
     }
