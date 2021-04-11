@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 namespace CodingProblems
 {
@@ -6,8 +7,8 @@ namespace CodingProblems
     {
         static void Main(string[] args)
         {
-        //    var maxGCD =  MaxGCD.CountLevelUpPlayers(3, 5, new int[] {2,2,3,4,5});
-            var input = new int[] {3, 3, 3, 3, 4, 8};
+            //    var maxGCD =  MaxGCD.CountLevelUpPlayers(3, 5, new int[] {2,2,3,4,5});
+            var input = new int[] { 3, 3, 3, 3, 4, 8 };
             // var maxGCD = MaxGCD.packagingMine(input);
             var warehouse = new WarehouseCost();
 
@@ -35,11 +36,59 @@ namespace CodingProblems
             // var powers = new int[]{4, 2, 8 ,3, 5};
             // var maxGCD = MultiProcessor.MinimumTimeFoFinish(powers, 19);
 
-            var path = "SSLLSS";
+            // var path = "SSLLSS";
 
-            var maxGCD = Robot.IsCirclePath(path);
+            // var maxGCD = Robot.IsCirclePath(path);
 
-           Console.WriteLine(maxGCD);
+            // var logs = new string[] {
+            //     "345366 899212 45",
+            //     "029323 382391 23",
+            //     "382391 345366 15",
+            //     "345366 345366 15",
+            //     "029323 382391 77",
+            //     "345366 382391 23",
+            //     "029323 345366 13",
+            //     "382391 382391 23"
+            // };
+
+            // var maxGCD = TransactionLogs.ListUserIds(logs, 4);
+
+            // foreach (var item in maxGCD)
+            // { Console.WriteLine(item); }
+
+            // var pairs = new int[][] {new int[]{0,1}, new int[]{1,2}, new int[]{2, 3}};
+
+            // var maxGCD = Graph.CheckIsCycleWithUnionFind(pairs, 4);
+
+            // var connections = new int[][] {new int[] {1,2,5}, new int[] {1, 3, 6}, new int[] {2, 3, 1}, new int[] {4, 5, 6}};
+
+            // // var connections = new int[][] { new int[] { 1, 2, 3 }, new int[] { 3, 4, 4 } };
+
+            // var maxGCD = MinimumSpanninTree.CalculateMinimumCost(connections, 5);
+
+
+            // GraphClass.UseKruskalMST();
+
+            // char[][] island = new char[][]{
+            //                                 new char[]{'O', 'O', 'O', 'O'},
+            //                                 new char[]{'D', 'O', 'D', 'O'},
+            //                                 new char[]{'O', 'O', 'O', 'O'},
+            //                                 new char[]{'O', 'O', 'O', 'X'}
+            //                             };
+
+            // var maxGCD = TreasureIsland.FindMinStepsWithDFS(island);
+
+            char[][] island = new char[][] {
+                                    new char[] {'S', 'O', 'O', 'S', 'S'},
+                                    new char[]{'D', 'O', 'D', 'O', 'D'},
+                                    new char[]{'O', 'O', 'O', 'O', 'X'},
+                                    new char[]{'X', 'D', 'D', 'O', 'O'},
+                                    new char[]{'X', 'D', 'D', 'D', 'O'}
+                                };
+
+            var maxGCD = TreasureIsland.FindShortestPathFromMultipleSource(island);
+
+            Console.WriteLine(maxGCD);
         }
     }
 }
