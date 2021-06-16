@@ -3,54 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 namespace CodingProblems
 {
-    public class ClockDigitCount {
-       public static int[] clockDigitsCount(int[] startTime, int[] finishTime) {
- var myList = new List<string>();
-
- while(startTime[2] <= finishTime[2])
- {
-     foreach(int i in startTime)
-     {
-         string chStr = (i.ToString().Length <= 1) ? "0" + i.ToString() : i.ToString();
-
-         char[] ch = chStr.ToCharArray();
-         foreach(char c in ch)
-         {
-             myList.Add(c.ToString());
-         }         
-     }
-     startTime[2] = startTime[2] + 1;
- }
-
- myList.Sort();
- var g = myList.GroupBy(i=>i);
- int[] outArray = new int[10];
- 
- foreach(var grp in g)
- {
-     int tmp = 0;
-     while(tmp < 10)
-     {
-        if(Convert.ToInt32(grp.Key) == tmp)
+    public class ClockDigitCount
+    {
+        public static int[] clockDigitsCount(int[] startTime, int[] finishTime)
         {
-            outArray[tmp] = Convert.ToInt32(grp.Count());
+            var myList = new List<string>();
+
+            while (startTime[2] <= finishTime[2])
+            {
+                foreach (int i in startTime)
+                {
+                    string chStr = (i.ToString().Length <= 1) ? "0" + i.ToString() : i.ToString();
+
+                    char[] ch = chStr.ToCharArray();
+                    foreach (char c in ch)
+                    {
+                        myList.Add(c.ToString());
+                    }
+                }
+                startTime[2] = startTime[2] + 1;
+            }
+
+            myList.Sort();
+            var g = myList.GroupBy(i => i);
+            int[] outArray = new int[10];
+
+            foreach (var grp in g)
+            {
+                int tmp = 0;
+                while (tmp < 10)
+                {
+                    if (Convert.ToInt32(grp.Key) == tmp)
+                    {
+                        outArray[tmp] = Convert.ToInt32(grp.Count());
+                    }
+                    tmp++;
+                }
+            }
+
+            foreach (int ir in outArray)
+            {
+                Console.WriteLine(ir);
+            }
+
+            return outArray;
         }
-        tmp++;
-    }    
- }
 
-foreach(int ir in outArray)
-{
-    Console.WriteLine(ir);
-}
-
- return outArray;
-}
-
-public static int[] clockDigitsCountV2(int[] startTime, int[] finishTime) {
-  
-                int start = startTime[0] * 60 * 60 + startTime[1] * 60 + startTime[2];
-                int finish = finishTime[0] * 60 * 60 + finishTime[1] * 60 + finishTime[2];
+        public static int[] clockDigitsCountV2(int[] startTime, int[] finishTime)
+        {
+            int start = startTime[0] * 60 * 60 + startTime[1] * 60 + startTime[2];
+            int finish = finishTime[0] * 60 * 60 + finishTime[1] * 60 + finishTime[2];
 
             int[] result = new int[10];
 
@@ -67,7 +69,7 @@ public static int[] clockDigitsCountV2(int[] startTime, int[] finishTime) {
             }
 
             return result;
-}
+        }
 
 
     }

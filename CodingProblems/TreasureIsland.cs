@@ -108,13 +108,13 @@ namespace CodingProblems
 
             Queue<int[]> queue = new Queue<int[]>();
 
-            for(int i=0;i<island.Length;i++)
+            for (int i = 0; i < island.Length; i++)
             {
-                for(int j = 0;j<island[0].Length;j++)
+                for (int j = 0; j < island[0].Length; j++)
                 {
-                    if(island[i][j] == 'S')
+                    if (island[i][j] == 'S')
                     {
-                        queue.Enqueue(new int[] {i, j});
+                        queue.Enqueue(new int[] { i, j });
                         island[i][j] = 'D';
                     }
                 }
@@ -122,30 +122,30 @@ namespace CodingProblems
 
             int steps = 1;
 
-            while(queue.Count > 0)
+            while (queue.Count > 0)
             {
                 int size = queue.Count;
 
-                for(int i = 0;i<size;i++)
+                for (int i = 0; i < size; i++)
                 {
                     int[] coords = queue.Dequeue();
 
-                    foreach(var dir in dirs)
+                    foreach (var dir in dirs)
                     {
                         var newx = coords[0] + dir[0];
                         var newy = coords[1] + dir[1];
 
-                        if(newx < 0 || newx >= island.Length || newy < 0 || newy >= island[0].Length || island[newx][newy] == 'D')
+                        if (newx < 0 || newx >= island.Length || newy < 0 || newy >= island[0].Length || island[newx][newy] == 'D')
                         {
                             continue;
                         }
 
-                        if(island[newx][newy] == 'X')
+                        if (island[newx][newy] == 'X')
                         {
                             return steps;
                         }
 
-                        queue.Enqueue(new int[] {newx, newy});
+                        queue.Enqueue(new int[] { newx, newy });
 
                         island[newx][newy] = 'D';
                     }

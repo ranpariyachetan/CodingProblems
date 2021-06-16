@@ -29,49 +29,60 @@ using System.Collections.Generic;
 
 namespace CodingProblems
 {
-    public class CheckBlanagrams {
-        bool checkBlanagrams(string word1, string word2) {
-int flag=0;
+    public class CheckBlanagrams
+    {
+        bool checkBlanagrams(string word1, string word2)
+        {
+            int flag = 0;
 
-List<string> str1 = new List<string> ();
-List<string>  str2 = new List<string> ();
-for(int i=0; i< word1.Length; i++){
-    str1.Add(Convert.ToString(word1[i]));
-    str2.Add(Convert.ToString(word2[i]));
-}
-str1.Sort();
-str2.Sort();
+            List<string> str1 = new List<string>();
+            List<string> str2 = new List<string>();
+            for (int i = 0; i < word1.Length; i++)
+            {
+                str1.Add(Convert.ToString(word1[i]));
+                str2.Add(Convert.ToString(word2[i]));
+            }
+            str1.Sort();
+            str2.Sort();
 
-for(int i=0;i< word1.Length;i++){
-  //  for(int j=0;j<word2.Length;j++){
-        if(word1[i].Equals(word2[i])){
-            flag++;
+            for (int i = 0; i < word1.Length; i++)
+            {
+                //  for(int j=0;j<word2.Length;j++){
+                if (word1[i].Equals(word2[i]))
+                {
+                    flag++;
+                }
+                // } 
+            }
+            if (flag == (word1.Length - 1))
+            {
+                return true;
+            }
+            return false;
         }
-   // } 
-}
-    if(flag ==(word1.Length - 1)){
-    return true;
-}
-return false;
-}
 
-bool checkBlanagramsV2(string word1, string word2) {
-    int[] checker = new int[26];
-    for (int i = 0; i < 26; ++i) {
-        checker[i] = 0;
-    }
-    for (int i = 0; i < word1.Length; ++i) {
-        checker[word1[i] - 'a']++;
-    }
-    for (int i = 0; i < word1.Length; ++i) {
-        checker[word2[i] - 'a']--;
-    }
-    int count = 0;
-    for (int i = 0; i < 26; ++i) {
-        count += Math.Abs(checker[i]);
-    }
-    return count == 2;
-}
+        bool checkBlanagramsV2(string word1, string word2)
+        {
+            int[] checker = new int[26];
+            for (int i = 0; i < 26; ++i)
+            {
+                checker[i] = 0;
+            }
+            for (int i = 0; i < word1.Length; ++i)
+            {
+                checker[word1[i] - 'a']++;
+            }
+            for (int i = 0; i < word1.Length; ++i)
+            {
+                checker[word2[i] - 'a']--;
+            }
+            int count = 0;
+            for (int i = 0; i < 26; ++i)
+            {
+                count += Math.Abs(checker[i]);
+            }
+            return count == 2;
+        }
 
     }
 }

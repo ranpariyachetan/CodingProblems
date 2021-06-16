@@ -36,9 +36,11 @@ namespace CodingProblems
             // var powers = new int[]{4, 2, 8 ,3, 5};
             // var maxGCD = MultiProcessor.MinimumTimeFoFinish(powers, 19);
 
-            // var path = "SSLLSS";
+            // var path = "SLSRSL";
 
             // var maxGCD = Robot.IsCirclePath(path);
+
+            // Console.WriteLine(maxGCD);
 
             // var logs = new string[] {
             //     "345366 899212 45",
@@ -78,17 +80,99 @@ namespace CodingProblems
 
             // var maxGCD = TreasureIsland.FindMinStepsWithDFS(island);
 
-            char[][] island = new char[][] {
-                                    new char[] {'S', 'O', 'O', 'S', 'S'},
-                                    new char[]{'D', 'O', 'D', 'O', 'D'},
-                                    new char[]{'O', 'O', 'O', 'O', 'X'},
-                                    new char[]{'X', 'D', 'D', 'O', 'O'},
-                                    new char[]{'X', 'D', 'D', 'D', 'O'}
-                                };
+            // char[][] island = new char[][] {
+            //                         new char[] {'S', 'O', 'O', 'S', 'S'},
+            //                         new char[]{'D', 'O', 'D', 'O', 'D'},
+            //                         new char[]{'O', 'O', 'O', 'O', 'X'},
+            //                         new char[]{'X', 'D', 'D', 'O', 'O'},
+            //                         new char[]{'X', 'D', 'D', 'D', 'O'}
+            //                     };
 
-            var maxGCD = TreasureIsland.FindShortestPathFromMultipleSource(island);
+            // var maxGCD = TreasureIsland.FindShortestPathFromMultipleSource(island);
 
-            Console.WriteLine(maxGCD);
+            // var n = 250;
+            // var durations = new List<int> {100, 50, 180, 40, 120, 30};
+
+            // Console.WriteLine(string.Join(' ', durations.OrderBy(i => i)));
+
+            // var maxGCD = Flight.GetMovies(n, durations);
+
+            // Console.WriteLine(maxGCD[0] + " " + maxGCD[1]);
+
+            // durations = new List<int> {100, 50, 130, 125, 95, 30};
+
+            // Console.WriteLine(string.Join(' ', durations.OrderBy(i => i)));
+
+            // maxGCD = Flight.GetMoviesWithHashTable(n, durations);
+
+            // Console.WriteLine($"{maxGCD[0]}, {maxGCD[1]}");
+
+            // string inputString = "abcdzABCDSEZ";
+
+            // var maxGCD = AlphabetShift.AlphabeticShiftV2(inputString);
+
+            // var arr = new int[] { 3, 4, 3 ,6, 3 , 3, 5};
+
+            // var maxGCD = Arrays.FindPairs(arr);
+
+            // Console.WriteLine(maxGCD);
+
+            // var matrix = new int[][] {
+            //     new int[]{1,2,2,3},
+            //     new int[] {0,1,0,2},
+            //     new int[]{4,-1,-1,-3}, 
+            //     new int[]{4,-1,-1,3}
+            //     };
+
+            // var matrix = new int[][] {
+            //     new int[] {1,1,1,1,1,1},
+            //     new int[] {1,1,1,1,1,1},
+            //     new int[] {1,1,1,1,1,1},
+            //     new int[] {1,1,1,1,1,1},
+            //     new int[] {1,1,1,1,1,1},
+            //     new int[] {1,1,1,1,1,1}
+            // };
+
+            // var maxGCD = BorderSums.borderSumsV2(matrix);
+
+            // foreach(var item in maxGCD)
+            // {
+            //     Console.WriteLine(item);
+            // }
+
+            // var lengths = new int[] {3, 1, 2};
+            // var widths = new int[] {3, 1, 2};
+            // var heights = new int[] {3, 2, 1};
+
+            // var maxGCD = BoxPacking.boxesPacking(lengths, widths, heights);
+
+            // Console.WriteLine(maxGCD);
+
+            // var str = "euotmn";
+
+            // var maxGCD = BuildPalindrome.buildPalindrome(str);
+
+            // Console.WriteLine(maxGCD);
+
+            // Strings.TestFindMinimumWindowsSubstring();
+            // LinkedList.TestFindIntersection();
+            // CircularQueue.TestCircularQueue();
+
+            // var result = Arrays.GetMO3(8, 2, 3);
+            // Console.WriteLine(result);
+
+            // var result = Arrays.GetMO4(10, 12, 14, 15);
+
+            // Console.WriteLine(result);
+
+            // Arrays.TestFindCompounds();
+
+            // Wordbreak.TestWorkdBreak();
+            // ChangeDispenser.TestCoinDispenser();
+            // BuildPalindrome.TestLongestPalindrome();
+            // BorderSums.TestCalculateBorderSum();
+            // BoxPacking.TestBoxPacking();
+            BuildPalindrome.TestBuildPalindromeString();
         }
     }
 }

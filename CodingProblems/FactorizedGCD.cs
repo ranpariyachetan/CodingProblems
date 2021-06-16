@@ -1,18 +1,19 @@
 namespace CodingProblems
 {
-//     Find the greatest common divisor of two given integer numbers. Each number is given in the form of its prime factorization - a sorted array of all prime factors.
+    //     Find the greatest common divisor of two given integer numbers. Each number is given in the form of its prime factorization - a sorted array of all prime factors.
 
-// Example
+    // Example
 
-// For a = [2, 3, 3, 3, 5] and b = [2, 2, 2, 2, 3, 3], the output should be
-// factorizedGCD(a, b) = 18.
+    // For a = [2, 3, 3, 3, 5] and b = [2, 2, 2, 2, 3, 3], the output should be
+    // factorizedGCD(a, b) = 18.
     public class FactorizedGCD
     {
-        public static int factorizedGCD(int[] a, int[] b) {
-    
-    //Note: There is a failed hidden test case and I think the issue would be a big multiplication (int and long can't handle the case 97 x 10 times). I tried to use BigInteger but I got compiled error on CodeSignal.
+        public static int GetFactorizedGCD(int[] a, int[] b)
+        {
 
- int firstNumber = a[0], secondNumber = b[0];
+            //Note: There is a failed hidden test case and I think the issue would be a big multiplication (int and long can't handle the case 97 x 10 times). I tried to use BigInteger but I got compiled error on CodeSignal.
+
+            int firstNumber = a[0], secondNumber = b[0];
             for (int i = 0; i < a.Length - 1; i++)
             {
                 firstNumber = firstNumber * a[i + 1];
@@ -28,7 +29,7 @@ namespace CodingProblems
                 return firstNumber;
             }
 
-            int primeFractor = 0, smallestNumber  = 0;
+            int primeFractor = 0, smallestNumber = 0;
 
             if (firstNumber >= secondNumber)
             {
@@ -48,30 +49,31 @@ namespace CodingProblems
             }
 
             return primeFractor;
-}
+        }
 
-public static int factorizedGCDV2(int[] a, int[] b) {
-    int result = 1;
-    int counter = 0;
-    
-    for(int i = 0; i< a.Length; i++)
-    {
-        //Skip if a value is greater than b value
-        while (counter < b.Length && a[i] > b[counter])
+        public static int GetFactorizedGCDV2(int[] a, int[] b)
         {
-            counter++;
+            int result = 1;
+            int counter = 0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                //Skip if a value is greater than b value
+                while (counter < b.Length && a[i] > b[counter])
+                {
+                    counter++;
+                }
+
+                //Find the common value in both and multiply as a factor
+                if (counter < b.Length && a[i] == b[counter])
+                {
+                    result = result * a[i];
+                    counter++;
+                }
+            }
+
+            return result;
         }
-        
-        //Find the common value in both and multiply as a factor
-        if (counter < b.Length && a[i] == b[counter])
-        {
-            result = result * a[i];
-            counter++;
-        }
-    }
-    
-    return result;
-}
 
     }
 }

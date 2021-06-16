@@ -31,7 +31,7 @@ namespace CodingProblems
             return answer;
         }
 
-        //Problem statement : https://aonecode.com/oa-shopping-options
+        //Problem statement :   
 
         public static int RecruitmentCombinations(int[] pms, int[] ses, int[] acms, int[] pmms, int budget)
         {

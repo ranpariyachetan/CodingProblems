@@ -213,7 +213,7 @@ namespace CodingProblems
             i = 0; // Index used to pick next edge
 
             // Number of edges to be taken is equal to V-1
-            while (e < V - 1 && i<edge.Length)
+            while (e < V - 1 && i < edge.Length)
             {
                 // Step 2: Pick the smallest edge. And increment
                 // the index for next iteration
