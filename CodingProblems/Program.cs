@@ -172,7 +172,10 @@ namespace CodingProblems
             // BuildPalindrome.TestLongestPalindrome();
             // BorderSums.TestCalculateBorderSum();
             // BoxPacking.TestBoxPacking();
-            BuildPalindrome.TestBuildPalindromeString();
+            // BuildPalindrome.TestBuildPalindromeString();
+
+            // WarehouseCost.TestLargestIntersection();
+            TopKFrequent.TestGetTopKFrequent();
         }
     }
 }
