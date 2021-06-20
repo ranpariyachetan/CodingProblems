@@ -175,7 +175,9 @@ namespace CodingProblems
             // BuildPalindrome.TestBuildPalindromeString();
 
             // WarehouseCost.TestLargestIntersection();
-            TopKFrequent.TestGetTopKFrequent();
+            // TopKFrequent.TestGetTopKFrequent();
+            // Excel.TestGetColumnNumber();
+            LinkedList.TestReverse();
         }
     }
 }
