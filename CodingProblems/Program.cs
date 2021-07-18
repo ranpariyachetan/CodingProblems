@@ -177,7 +177,8 @@ namespace CodingProblems
             // WarehouseCost.TestLargestIntersection();
             // TopKFrequent.TestGetTopKFrequent();
             // Excel.TestGetColumnNumber();
-            LinkedList.TestReverse();
+            // LinkedList.TestReverse();
+            Excel.TestGetColumnName();
         }
     }
 }
