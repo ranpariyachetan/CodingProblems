@@ -172,7 +172,11 @@ namespace CodingProblems
             // BuildPalindrome.TestLongestPalindrome();
             // BorderSums.TestCalculateBorderSum();
             // BoxPacking.TestBoxPacking();
-            BuildPalindrome.TestBuildPalindromeString();
+            // BuildPalindrome.TestBuildPalindromeString();
+            // AlmostIncreasingArray.TestCheckSequence();
+            // ChangeBST.TestChangeBST();
+            // CheckBlanagrams.TestBlanagrams();
+            Strings.TestFindMinimumWindowsSubstring();
         }
     }
 }

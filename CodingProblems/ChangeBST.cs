@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace CodingProblems
@@ -14,7 +15,7 @@ namespace CodingProblems
         //   Tree<T> left;
         //   Tree<T> right;
         // }
-        Tree<int> changeBST(Tree<int> t)
+        static Tree<int> changeBST(Tree<int> t)
         {
 
             int[] sum = new int[1];
@@ -23,7 +24,7 @@ namespace CodingProblems
         }
 
 
-        Tree<int> changeBSTSum(Tree<int> t, int[] sum)
+        static Tree<int> changeBSTSum(Tree<int> t, int[] sum)
         {
             if (t == null)
                 return t;
@@ -81,7 +82,32 @@ namespace CodingProblems
             ListAdding(n.Right, lst);
 
             return lst;
+        }
 
+        public static void TestChangeBST()
+        {
+            var root = new Tree<int>();
+            root.Value = 8;
+            root.Left = new Tree<int>();
+            root.Left.Value = 3;
+            root.Left.Left = new Tree<int>();
+            root.Left.Left.Value = 1;
+            root.Left.Right = new Tree<int>();
+            root.Left.Right.Value = 6;
+            root.Left.Right.Left = new Tree<int>();
+            root.Left.Right.Left.Value = 4;
+            root.Left.Right.Right = new Tree<int>();
+            root.Left.Right.Right.Value = 7;
+            root.Right = new Tree<int>();
+            root.Right.Value = 10;
+            root.Right.Right = new Tree<int>();
+            root.Right.Right.Value = 14;
+            root.Right.Right.Left = new Tree<int>();
+            root.Right.Right.Left.Value = 13;
+
+            var r = changeBST(root);
+
+            Console.WriteLine(r.Value);
         }
     }
 

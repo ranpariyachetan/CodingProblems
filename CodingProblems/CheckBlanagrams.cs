@@ -31,30 +31,47 @@ namespace CodingProblems
 {
     public class CheckBlanagrams
     {
-        bool checkBlanagrams(string word1, string word2)
+        static bool checkBlanagrams(string word1, string word2)
         {
             int flag = 0;
 
-            List<string> str1 = new List<string>();
-            List<string> str2 = new List<string>();
-            for (int i = 0; i < word1.Length; i++)
-            {
-                str1.Add(Convert.ToString(word1[i]));
-                str2.Add(Convert.ToString(word2[i]));
-            }
-            str1.Sort();
-            str2.Sort();
+            var str1 = word1.ToCharArray();
+            var str2 = word2.ToCharArray();
 
-            for (int i = 0; i < word1.Length; i++)
+            Array.Sort(str1);
+            Array.Sort(str2);
+            // List<string> str1 = new List<string>();
+            // List<string> str2 = new List<string>();
+            // for (int i = 0; i < word1.Length; i++)
+            // {
+            //     str1.Add(Convert.ToString(word1[i]));
+            //     str2.Add(Convert.ToString(word2[i]));
+            // }
+            // str1.Sort();
+            // str2.Sort();
+
+            int i = 0, x = 0, y = 0;
+
+            while (i + x < word1.Length && i + y < word1.Length)
             {
-                //  for(int j=0;j<word2.Length;j++){
-                if (word1[i].Equals(word2[i]))
+                if (str1[i + x] != str2[i + y])
                 {
                     flag++;
+                    i++;
+                    if (str1[i] > str2[i])
+                    {
+                        y++;
+                    }
+                    else
+                    {
+                        x++;
+                    }
+                    continue;
                 }
-                // } 
+                i++;
             }
-            if (flag == (word1.Length - 1))
+
+            if (flag == 1)
             {
                 return true;
             }
@@ -84,5 +101,14 @@ namespace CodingProblems
             return count == 2;
         }
 
+        public static void TestBlanagrams()
+        {
+            var word1 = "tbngram";
+            var word2 = "anagram";
+
+            var result = checkBlanagrams(word1, word2);
+
+            Console.WriteLine(result);
+        }
     }
 }

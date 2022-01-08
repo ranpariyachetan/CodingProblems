@@ -4,7 +4,7 @@ namespace CodingProblems
 {
     public class AlmostIncreasingArray
     {
-        public static bool almostIncreasingSequence(int[] sequence)
+        public static bool IsAlmostIncreasingSequence(int[] sequence)
         {
             // If the Length is 2 , We can reomve any element to make the sequence strictly increasing sequance
             if (sequence.Length == 2)
@@ -47,10 +47,11 @@ namespace CodingProblems
                 return true;
             }
             int[] checker = new int[sequence.Length];
-            for (int i = 0; i < sequence.Length; ++i)
-            {
-                checker[i] = 1;
-            }
+            Array.Fill(checker, 1);
+            // for (int i = 0; i < sequence.Length; ++i)
+            // {
+            //     checker[i] = 1;
+            // }
             for (int i = 0; i < sequence.Length; ++i)
             {
                 for (int j = Math.Max(0, i - 2); j < i; ++j)
@@ -136,6 +137,15 @@ namespace CodingProblems
             }
 
             return true;
+        }
+
+        public static void TestCheckSequence()
+        {
+            var input = new int[] {1, 3, 2, 1};
+
+            var result = CheckSequence(input);
+
+            Console.WriteLine(result);
         }
     }
 }

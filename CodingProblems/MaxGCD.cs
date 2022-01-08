@@ -5,7 +5,7 @@ namespace CodingProblems
 {
     public class MaxGCD
     {
-        public static int findMaxGCD(int[] arr,
+        public static int FindMaxGCD(int[] arr,
                                  int n)
         {
             // Computing highest element
