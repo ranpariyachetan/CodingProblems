@@ -8,9 +8,9 @@ namespace CodingProblems
         static void Main(string[] args)
         {
             //    var maxGCD =  MaxGCD.CountLevelUpPlayers(3, 5, new int[] {2,2,3,4,5});
-            var input = new int[] { 3, 3, 3, 3, 4, 8 };
-            // var maxGCD = MaxGCD.packagingMine(input);
-            var warehouse = new WarehouseCost();
+            // var input = new int[] { 3, 3, 3, 3, 4, 8 };
+            // // var maxGCD = MaxGCD.packagingMine(input);
+            // var warehouse = new WarehouseCost();
 
             // int[][] pairs = new int[][] {new int[]{2,6}, new int[]{3,5},new int[]{0,1}, new int[]{2,9}, new int[]{5,6}};
             // var maxGCD = warehouse.EvaluateCost(10, pairs );
