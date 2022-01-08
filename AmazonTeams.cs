@@ -22,3 +22,26 @@ public static void Main()
 		
 		Console.WriteLine(answer);
 	}
+
+public static int GetPasswordStrength(string input)
+	{
+		Dictionary<char, int> map = new Dictionary<char, int>();		
+		
+		for(var c = 'a';c<='z';c++)
+		{
+			map[c] = -1;	
+		}
+		
+		int ret = 0;
+		int left = 0;
+		int right = 0;
+		for (var i =0;i<input.Length;i++)
+		{
+			left = i - map[input[i]];
+			right = input.Length - i;
+			ret += left * right;
+			map[input[i]] = i;
+		}
+		
+		return ret;
+	}
