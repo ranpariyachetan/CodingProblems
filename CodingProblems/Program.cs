@@ -176,7 +176,13 @@ namespace CodingProblems
             // AlmostIncreasingArray.TestCheckSequence();
             // ChangeBST.TestChangeBST();
             // CheckBlanagrams.TestBlanagrams();
-            Strings.TestFindMinimumWindowsSubstring();
+            //Strings.TestFindMinimumWindowsSubstring();
+
+            // WarehouseCost.TestLargestIntersection();
+            // TopKFrequent.TestGetTopKFrequent();
+            // Excel.TestGetColumnNumber();
+            // LinkedList.TestReverse();
+            Excel.TestGetColumnName();
         }
     }
 }

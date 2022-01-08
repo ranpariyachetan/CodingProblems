@@ -53,6 +53,36 @@ namespace CodingProblems
             return null;
         }
 
+        private static Node Reverse(Node head)
+        {
+            var right = head;
+            Node prev = null;
+            Node next = null;
+
+            while(right != null)
+            {
+                next = right.Next;
+                right.Next = prev;
+                prev = right;
+                right = next;
+            }
+
+            return prev;
+        }
+
+        public static void TestReverse()
+        {
+            var head = new Node(1, new Node(2, new Node(3, new Node(4, null))));
+
+            var rev = Reverse(head);
+
+            while(rev != null)
+            {
+                Console.WriteLine(rev.Data);
+                rev = rev.Next;
+            }
+        }
+
         public static void TestFindIntersection()
         {
             var tail = new Node(300, null);
