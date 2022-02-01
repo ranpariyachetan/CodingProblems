@@ -182,7 +182,22 @@ namespace CodingProblems
             // TopKFrequent.TestGetTopKFrequent();
             // Excel.TestGetColumnNumber();
             // LinkedList.TestReverse();
-            Excel.TestGetColumnName();
+            // Excel.TestGetColumnName();
+
+            // var password = "good";
+
+            // var c = Password.GetPasswordStrength(password);
+
+            // Console.WriteLine(c);
+
+            int[, ] M = new int[, ] { { 1, 1, 0, 0, 0 },
+                                      { 1, 1, 0, 0, 0 },
+                                      { 0, 0, 1, 0, 0 },
+                                      { 0, 0, 0, 1, 1 } };
+                                    //   { 1, 0, 1, 1, 0 } };
+
+            var answer = Islands.GetNumberOfIslandsDFS(M);
+        Console.WriteLine("Number of islands is: " + answer);
         }
     }
 }
