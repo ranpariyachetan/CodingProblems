@@ -69,7 +69,7 @@ namespace CodingProblems
                                       { 0, 0, 0, 1, 1 } };
             //   { 1, 0, 1, 1, 0 } };
 
-            var answer = GetNumberOfIslandsDFS(M);
+            var answer = GetNumberOfIslandsDFS(map);
             Console.WriteLine("Number of islands is: " + answer);
 
         }
