@@ -6,7 +6,8 @@ namespace CodingProblems
     //     Consider a square matrix with sides of even length.
 
     // Define its 0-border as the union of left and right columns as well as top and bottom rows.
-    // Now consider the initial matrix without the 0-border. Its 0-border is 1-border for the initial matrix. In the same way one can define 2-border, 3-border, etc.
+    // Now consider the initial matrix without the 0-border. Its 0-border is 1-border for the initial matrix. 
+    // In the same way one can define 2-border, 3-border, etc.
 
     // Given a square matrix, find sums of elements for each of the matrix borders.
     public class BorderSums

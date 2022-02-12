@@ -126,6 +126,96 @@ namespace CodingProblems
             return FindWordsForSubString(word, start, end + 1, indexMap);
         }
 
+        private static int[] RemoveDuplicates(int[] arr)
+        {
+            var result = new int[arr.Length];
+
+            int i = 1;
+            int countter = 1;
+
+            result[0] = arr[0];
+
+            while(i < arr.Length)
+            {
+                if(arr[i - 1] != arr[i])
+                {
+                    result[countter] = arr[i];
+                    countter++;
+                }
+                i++;
+            }
+            return result;
+        }
+
+        // Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k.
+        private static int GetSubArraySum(int[] nums, int k)
+        {
+            Dictionary<int, int> map = new Dictionary<int, int>();
+            map.Add(0, 1);
+            int sum = 0;
+            var count = 0;
+            for(int i = 0;i<nums.Length;i++)
+            {
+                sum += nums[i];
+
+                if(map.ContainsKey(sum - k)) {
+                    count += map[sum - k];
+                }
+
+                if (map.ContainsKey(sum))
+                {
+                    map[sum] ++;
+                }
+                else
+                {
+                    map.Add(sum , 1);
+                }
+            }
+
+            return count;
+        }
+
+        public static void TestSubArraySum()
+        {
+            var input = new int[] { 1, 1, 1 };
+
+            var result = GetSubArraySum(input, 2);
+
+            Console.WriteLine(result);
+
+            result = GetSubArraySum(new int[] { 5, 1, 2, 3 }, 3);
+
+            Console.WriteLine(result);
+
+            result = GetSubArraySum(new int[] { 2, 2, 2, 2, 2, 6 }, 6);
+
+            Console.WriteLine(result);
+
+            result = GetSubArraySum(new int[] { -1, -1, 1 }, 0);
+
+            Console.WriteLine(result);
+
+            result = GetSubArraySum(new int[] { 1, 1, 0, -1, 2, 1 }, 2);
+
+            Console.WriteLine(result);
+
+            result = GetSubArraySum(new int[] { 5, -5, 4 }, 0);
+
+            Console.WriteLine(result);
+        }
+
+        public static void TestRemoveDuplicates()
+        {
+            int[] a = new int[] {1, 2, 2, 3, 4, 4, 4, 5, 5};
+
+            var r = RemoveDuplicates(a);
+
+            foreach(var x in r)
+            {
+                Console.WriteLine(x);
+            }
+        }
+
         public static void TestFindCompounds()
         {
             // var inputList = new List<string>
@@ -164,7 +254,7 @@ namespace CodingProblems
 
             var output = FindCompounds(inputList);
 
-            Console.WriteLine();
+            Console.WriteLine("completed");
             foreach (var list in output)
             {
                 PrintList(list);

@@ -7,7 +7,7 @@ namespace CodingProblems
     {
         public static int[] clockDigitsCount(int[] startTime, int[] finishTime)
         {
-            var myList = new List<string>();
+            var map = new SortedDictionary<char, int>();
 
             while (startTime[2] <= finishTime[2])
             {
@@ -18,27 +18,24 @@ namespace CodingProblems
                     char[] ch = chStr.ToCharArray();
                     foreach (char c in ch)
                     {
-                        myList.Add(c.ToString());
+                        if(map.ContainsKey(c))
+                        {
+                            map[c] ++;
+                        }
+                        else
+                        {
+                            map.Add(c, 1);
+                        }
                     }
                 }
                 startTime[2] = startTime[2] + 1;
             }
 
-            myList.Sort();
-            var g = myList.GroupBy(i => i);
             int[] outArray = new int[10];
 
-            foreach (var grp in g)
+            foreach (var grp in map)
             {
-                int tmp = 0;
-                while (tmp < 10)
-                {
-                    if (Convert.ToInt32(grp.Key) == tmp)
-                    {
-                        outArray[tmp] = Convert.ToInt32(grp.Count());
-                    }
-                    tmp++;
-                }
+                outArray[grp.Key - '0'] = grp.Value;
             }
 
             foreach (int ir in outArray)
@@ -71,7 +68,13 @@ namespace CodingProblems
             return result;
         }
 
+        public static void TestClockDigitCount()
+        {
+            var startTime = new int[] {13, 24, 5};
+            var endTime = new int[] {13, 24, 6};
 
+            clockDigitsCount(startTime, endTime);
+        }
     }
 }
 

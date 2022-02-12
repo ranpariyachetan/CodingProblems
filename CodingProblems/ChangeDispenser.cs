@@ -103,13 +103,13 @@ namespace CodingProblems
         public static void TestCoinDispenser()
         {
             int amount = 10;
-            int[] coins = new int[] { 1, 5, 10 };
+            int[] coins = new int[] { 1, 5 };
 
             // var answer = DispenseMinimumCoinsBottomUp(coins, amount);
 
             // Console.WriteLine(answer);
 
-            var answer = GetNumberOfPossibleCombinations(coins, amount);
+            var answer = DispenseMinimumCoinsBottomUp(coins, amount);
 
             Console.WriteLine(answer);
         }

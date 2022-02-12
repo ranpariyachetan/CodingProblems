@@ -20,7 +20,7 @@ namespace CodingProblems
             for(int i = 1;i<=number;i *= 10)
             {
                 int divider = i * 10;
-
+                
                 counter += (number / divider) * i + Math.Min(Math.Max(number % divider - i + 1, 0), i);
             }
 

@@ -78,7 +78,7 @@ namespace CodingProblems
             return false;
         }
 
-        bool checkBlanagramsV2(string word1, string word2)
+        static bool checkBlanagramsV2(string word1, string word2)
         {
             int[] checker = new int[26];
             for (int i = 0; i < 26; ++i)
@@ -103,7 +103,7 @@ namespace CodingProblems
 
         public static void TestBlanagrams()
         {
-            var word1 = "tbngram";
+            var word1 = "gramnah";
             var word2 = "anagram";
 
             var result = checkBlanagrams(word1, word2);
