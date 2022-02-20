@@ -175,6 +175,48 @@ namespace CodingProblems.Arrays
             return count;
         }
 
+        // https://leetcode.com/problems/two-sum/
+        // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+        // You may assume that each input would have exactly one solution, and you may not use the same element twice.
+        // You can return the answer in any order.
+
+        public static int[] TwoSum(int[] arr, int target)
+        {
+            var hSet = new Dictionary<int, int>();
+
+            for(var i = 0;i<arr.Length;i++)
+            {
+                if(hSet.ContainsKey(arr[i]))
+                {
+                    return new int[] {hSet[arr[i]], i};
+                }
+                else
+                {
+                    hSet[target - arr[i]] = i;
+                }
+            }
+
+            return new int[0];
+        }
+
+        public static void TestTwoSum()
+        {
+            var input = new int[] {1, 2, 3};
+            var target = 3;
+            var result = TwoSum(input, target);
+            //Console.WriteLine($"Expected: [0, 1], Actual: [{result[0]}, {result[1]}]");
+
+            input = new int[] {4,23,2,7};
+            target = 9;
+            result = TwoSum(input, target);
+            //Console.WriteLine($"Expected: [0, 1], Actual: [{result[0]}, {result[1]}]");
+
+            input = new int[] {1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1};
+            target = 11;
+            result = TwoSum(input, target);
+            Console.WriteLine($"Expected: [0, 1], Actual: [{result[0]}, {result[1]}]");
+        }
+
         public static void TestSubArraySum()
         {
             var input = new int[] { 1, 1, 1 };
