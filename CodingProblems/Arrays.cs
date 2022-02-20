@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CodingProblems
 {
 
-    public class Arrays
+    public partial class Arrays
     {
         public static int FindPairs(int[] arr)
         {
