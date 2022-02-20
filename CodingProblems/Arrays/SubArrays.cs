@@ -4,7 +4,11 @@ using System.Collections.Generic;
 namespace CodingProblems.Arrays
 {
     public partial class Arrays
-    {
+     {
+        // Given a string str, find the length of the longest substring without repeating characters. 
+        // For “ABDEFGABEF”, the longest substring are “BDEFGA” and “DEFGAB”, with length 6.
+        // For “BBBB” the longest substring is “B”, with length 1.
+        // For “GEEKSFORGEEKS”, there are two longest substrings shown in the below diagrams, with length 7
         public static int LengthOfLongestSubstring(string s)
         {
             if (s.Length <= 1)
