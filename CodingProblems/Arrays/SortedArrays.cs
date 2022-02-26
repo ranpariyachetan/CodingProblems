@@ -10,40 +10,41 @@ namespace CodingProblems.Arrays
         // The final sorted array should not be returned by the function, but instead be stored inside the array nums1. 
         // To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
-        public static void MergeSortedArrays(int[] nums1, int m, int[] nums2, int n) {
+        public static void MergeSortedArrays(int[] nums1, int m, int[] nums2, int n)
+        {
             var tmp = new int[m + n];
 
             var count = 0;
             var m1 = 0;
             var m2 = 0;
 
-            if(n == 0)
+            if (n == 0)
                 return;
 
-            if(m == 0)
+            if (m == 0)
             {
-                while(count < n)
+                while (count < n)
                 {
                     tmp[count] = nums2[count];
                     count++;
                 }
             }
 
-            PrintArray(nums1);
-            PrintArray(nums2);
-            
-            while(count < m+n)
+            Common.PrintArray(nums1);
+            Common.PrintArray(nums2);
+
+            while (count < m + n)
             {
-                while(m1 < m && nums1[m1] <= nums2[m2])
+                while (m1 < m && nums1[m1] <= nums2[m2])
                 {
                     tmp[count] = nums1[m1];
                     count++;
                     m1++;
                 }
 
-                if(m1 == m)
+                if (m1 == m)
                 {
-                    while(m2 < n)
+                    while (m2 < n)
                     {
                         tmp[count] = nums2[m2];
                         count++;
@@ -51,7 +52,7 @@ namespace CodingProblems.Arrays
                     }
                 }
 
-                while(m2 < n && nums2[m2] <= nums1[m1])
+                while (m2 < n && nums2[m2] <= nums1[m1])
                 {
                     Console.WriteLine($"m2: {m2}, nums2[{m2}]: {nums2[m2]}");
                     tmp[count] = nums2[m2];
@@ -59,9 +60,9 @@ namespace CodingProblems.Arrays
                     m2++;
                 }
 
-                if(m2 == n)
+                if (m2 == n)
                 {
-                    while(m1 < m)
+                    while (m1 < m)
                     {
                         tmp[count] = nums1[m1];
                         count++;
@@ -70,7 +71,7 @@ namespace CodingProblems.Arrays
                 }
             }
 
-            for(var i = 0;i<tmp.Length;i++)
+            for (var i = 0; i < tmp.Length; i++)
             {
                 nums1[i] = tmp[i];
             }
@@ -91,13 +92,9 @@ namespace CodingProblems.Arrays
 
             MergeSortedArrays(nums1, m, nums2, n);
 
-            PrintArray(nums1);
-        
+            Common.PrintArray(nums1);
+
         }
 
-        private static void PrintArray(int[] arr)
-        {
-            Console.Write($"[{string.Join(',', arr)}]");
-        }
     }
 }

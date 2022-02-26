@@ -11,7 +11,7 @@ namespace CodingProblems.Arrays
             var map = new Dictionary<int, int>();
             for (var i = 0; i < nums1.Length; i++)
             {
-                if(map.ContainsKey(nums1[i]))
+                if (map.ContainsKey(nums1[i]))
                 {
                     map[nums1[i]]++;
                 }
@@ -25,7 +25,7 @@ namespace CodingProblems.Arrays
             {
                 if (map.ContainsKey(nums2[i]))
                 {
-                    if(map[nums2[i]] > 0)
+                    if (map[nums2[i]] > 0)
                     {
                         result.Add(nums2[i]);
                         map[nums2[i]]--;
@@ -43,41 +43,35 @@ namespace CodingProblems.Arrays
 
             var result = IntersectArrays(nums1, nums2);
 
-            PrintArray(result);
+            Common.PrintArray(result);
 
             nums1 = new int[] { 4, 9, 5 };
             nums2 = new int[] { 9, 4, 9, 8, 4 };
 
             result = IntersectArrays(nums1, nums2);
 
-            PrintArray(result);
+            Common.PrintArray(result);
 
             nums1 = new int[] { };
             nums2 = new int[] { 9, 4, 9, 8, 4 };
 
             result = IntersectArrays(nums1, nums2);
 
-            PrintArray(result);
+            Common.PrintArray(result);
 
-            nums1 = new int[] {1,2,3 };
+            nums1 = new int[] { 1, 2, 3 };
             nums2 = new int[] { };
 
             result = IntersectArrays(nums1, nums2);
 
-            PrintArray(result);
+            Common.PrintArray(result);
 
-            nums1 = new int[] {1,2,1,2,3,4 };
-            nums2 = new int[] { 1,2,4};
+            nums1 = new int[] { 1, 2, 1, 2, 3, 4 };
+            nums2 = new int[] { 1, 2, 4 };
 
             result = IntersectArrays(nums1, nums2);
 
-            PrintArray(result);
-        }
-
-        private static void PrintArray(int[] arr)
-        {
-            var r = string.Join(',', arr);
-            Console.WriteLine($"[{r}]");
+            Common.PrintArray(result);
         }
     }
 }

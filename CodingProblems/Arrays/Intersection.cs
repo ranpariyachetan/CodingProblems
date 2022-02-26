@@ -13,14 +13,14 @@ namespace CodingProblems.Arrays
         {
             var hSet = new HashSet<int>();
             var list = new List<int>();
-            foreach(var num in nums1)
+            foreach (var num in nums1)
             {
                 hSet.Add(num);
             }
 
-            foreach(var num in nums2)
+            foreach (var num in nums2)
             {
-                if(hSet.Contains(num))
+                if (hSet.Contains(num))
                 {
                     hSet.Remove(num);
                     list.Add(num);
@@ -32,14 +32,13 @@ namespace CodingProblems.Arrays
 
         public static void TestIntersection()
         {
-            var nums1 = new int[] {4,9,5};
+            var nums1 = new int[] { 4, 9, 5 };
 
-            var nums2=new int[]{9,4,9,8,4};
+            var nums2 = new int[] { 9, 4, 9, 8, 4 };
 
             var result = FindIntersection(nums1, nums2);
 
-            PrintArray(result);
+            Common.PrintArray(result);
         }
     }
-
 }
