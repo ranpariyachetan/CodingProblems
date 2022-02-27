@@ -109,12 +109,45 @@ namespace CodingProblems.Sudoku
             return true;
         }
 
+
+        public static bool IsValidSudokuV2(char[][] board)
+        {
+            var set = new HashSet<string>();
+
+            for(var i = 0;i<board.Length;i++)
+            {
+                for(var j = 0;j<board[i].Length;j++)
+                {
+                    var ch = board[i][j];
+                    var r = "r" + ch.ToString() + i.ToString();
+                    var c = "c" + ch.ToString() + j.ToString();
+                    var b = "c" + ch.ToString() + (i / 3) * 3 + (j/3);
+                    if(ch != '.')
+                    {
+                        
+                            if(set.Contains(r) || set.Contains(c) || set.Contains(b))
+                            {
+                                return false;
+                            }
+                        
+                        else
+                        {
+                            set.Add(r);
+                            set.Add(c);
+                            set.Add(b);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
         public static void TestValidateSudoku()
         {
             var board = new char[][] {
 
 
-new char[] {'5','3','.','.','7','.','.','.','.'},
+new char[] {'8','3','.','.','7','.','.','.','.'},
 new char[] {'6','.','.','1','9','5','.','.','.'},
 new char[] {'.','9','8','.','.','.','.','6','.'},
 new char[] {'8','.','.','.','6','.','.','.','3'},
@@ -125,7 +158,7 @@ new char[] {'.','.','.','4','1','9','.','.','5'},
 new char[] {'.','.','.','.','8','.','.','7','9'}
             };
 
-            var res = IsValidSudoku(board);
+            var res = IsValidSudokuV2(board);
 
             Console.WriteLine(res);
             Console.WriteLine(count);
