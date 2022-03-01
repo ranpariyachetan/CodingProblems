@@ -146,7 +146,10 @@ namespace CodingProblems.Arrays
             return tmp;
         }
 
-        private static double FindMedianSortedArrays(int[] nums1, int[] nums2)
+        // https://leetcode.com/problems/median-of-two-sorted-arrays/
+        // Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+        // The overall run time complexity should be O(log (m+n)).
+        private static double FindMedianSortedArraysV1(int[] nums1, int[] nums2)
         {
             var merged = MergeSortedArray(nums1, nums2);
 
@@ -162,6 +165,7 @@ namespace CodingProblems.Arrays
             }
         }
 
+        
         public static void TestMedianSortedArray()
         {
             var nums1 = new int[] {4};
@@ -170,10 +174,9 @@ namespace CodingProblems.Arrays
                 1,2,3,5,6
             };
 
-            var result = FindMedianSortedArrays(nums1, nums2);
+            var result = FindMedianSortedArraysV1(nums1, nums2);
 
             Console.WriteLine(result);
         }
-
     }
 }
