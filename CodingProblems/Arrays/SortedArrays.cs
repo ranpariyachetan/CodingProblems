@@ -30,9 +30,6 @@ namespace CodingProblems.Arrays
                 }
             }
 
-            Common.PrintArray(nums1);
-            Common.PrintArray(nums2);
-
             while (count < m + n)
             {
                 while (m1 < m && nums1[m1] <= nums2[m2])
@@ -54,7 +51,6 @@ namespace CodingProblems.Arrays
 
                 while (m2 < n && nums2[m2] <= nums1[m1])
                 {
-                    Console.WriteLine($"m2: {m2}, nums2[{m2}]: {nums2[m2]}");
                     tmp[count] = nums2[m2];
                     count++;
                     m2++;
@@ -93,8 +89,6 @@ namespace CodingProblems.Arrays
             MergeSortedArrays(nums1, m, nums2, n);
 
             Common.PrintArray(nums1);
-
         }
-
     }
 }
