@@ -4,6 +4,10 @@ namespace CodingProblems.Arrays
 {
     public partial class Arrays
     {
+        // https://leetcode.com/problems/first-missing-positive/
+        // Given an unsorted integer array nums, return the smallest missing positive integer.
+        // You must implement an algorithm that runs in O(n) time and uses constant extra space.
+
         private static int FindFirstMissingPositiveV1(int[] arr)
         {
             Array.Sort(arr);
