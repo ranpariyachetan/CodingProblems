@@ -107,14 +107,10 @@ namespace CodingProblems
 
         private static string LongestPalindrome(string s)
         {
+            int count = 0;
             if (s.Length == 0)
             {
                 return s;
-            }
-
-            if (s.Length <= 2)
-            {
-                return s.Substring(0, 1);
             }
 
             int i = 0;
@@ -123,53 +119,95 @@ namespace CodingProblems
 
             int end = s.Length - 1, y = end;
 
-            var maxLen = int.MinValue;
+            var maxLen = 1;
 
             var low = 0;
 
-            for(i = 1;i<s.Length;i++)
+            for (i = 1; i < s.Length; i++)
             {
-                start = i-1;
+                count++;
+                start = i - 1;
                 end = i;
 
-                while(start >=0 && end < s.Length && s[start] == s[end])
+                while (start >= 0 && end < s.Length && s[start] == s[end])
                 {
-                    if(end - start + 1 > maxLen)
-                    {
-                        low = start;
-                        maxLen = end-start + 1;
-                    }
-
-                    start--;
-                    end++;
-                }
-
-                start = i-1;
-
-                end = i + 1;
-
-                while(start >=0 && end < s.Length && s[start] == s[end])
-                {
-                    if(end - start + 1 > maxLen)
+                    count++;
+                    if (end - start + 1 > maxLen)
                     {
                         low = start;
                         maxLen = end - start + 1;
                     }
 
                     start--;
-                    end ++;
+                    end++;
                 }
 
-            }
+                start = i - 1;
 
+                end = i + 1;
+
+                while (start >= 0 && end < s.Length && s[start] == s[end])
+                {
+                    count++;
+                    if (end - start + 1 > maxLen)
+                    {
+                        low = start;
+                        maxLen = end - start + 1;
+                    }
+
+                    start--;
+                    end++;
+                }
+            }
+            Console.WriteLine(count);
             return s.Substring(low, maxLen);
         }
 
         public static void TestLongestPalindrome()
         {
-            var input = "achetehcbchetehc";
+            var input = "abcdefg";
 
             var result = LongestPalindrome(input);
+
+            Console.WriteLine(result);
+        }
+
+        private static string LongestPalindromeV2(string s)
+        {
+            if (s.Length <= 0)
+            {
+                return s;
+            }
+
+            var map = new bool[s.Length][];
+            var maxLen = 0;
+            var subStr = "";
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                map[i] = new bool[s.Length];
+                for (var j = 0; j <= i; j++)
+                {
+                    var b = s[j] == s[i];
+
+                    map[j][i] = i - j > 2 ? map[j + 1][i - 1] && b : b;
+
+                    if(map[j][i] && i - j + 1 > maxLen)
+                    {
+                        maxLen = i - j + 1;
+                        subStr = s.Substring(j, i + 1);
+                    }
+                }
+            }
+
+            return subStr;
+        }
+
+        public static void TestLongestPalindromeV2()
+        {
+            var input = "aacecaaa";
+
+            var result = LongestPalindromeV2(input);
 
             Console.WriteLine(result);
         }
