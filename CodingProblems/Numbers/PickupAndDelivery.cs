@@ -50,10 +50,10 @@ namespace CodingProblems.Numbers
             var n = 3;
 
             Console.WriteLine(CountOrders(n));
-            Console.WriteLine(CountOrdersWithCombinations(n));
+            Console.WriteLine(CountOrdersWithPermutations(n));
         }
 
-        public static int CountOrdersWithCombinations(int n)
+        public static int CountOrdersWithPermutations(int n)
         {
             long ans = 1;
 
