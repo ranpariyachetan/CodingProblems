@@ -1,5 +1,5 @@
 using System;
-namespace CodingProblems
+namespace CodingProblems.Numbers
 {
     public class Numbers
     {
