@@ -28,7 +28,7 @@ namespace CodingProblems.Arrays
                 }
             }
 
-            return sum < 0 ?0 : sum;
+            return sum < 0 ? 0 : sum;
         }
 
         public static void TestMaxProfit()
@@ -41,7 +41,7 @@ namespace CodingProblems.Arrays
             arr = new [] {80, 2, 6, 3, 100};
             result = MaxProfit(arr);
 
-            Console.WriteLine("Max Profit: {0}", result);
+            Console.WriteLine("Max Profit With Diff: {0}", result);
 
             arr = new [] {5,5,5,5,5};
             result = MaxProfit(arr);
@@ -68,39 +68,6 @@ namespace CodingProblems.Arrays
             result = MaxProfit(arr);
 
             Console.WriteLine("Max Profit: {0}", result);
-
-        }
-
-        private static int MaxProfitWithDiff(int[] prices)
-        {
-            if(prices.Length <= 1)
-            {
-                return 0;
-            }
-            int diff = prices[1] - prices[0];
-            int sum = diff;
-            int maxSum = sum;
-
-            for(var i = 1;i<prices.Length - 1;i++)
-            {
-                diff =  prices[i + 1] - prices[i];
-
-                if(diff > 0)
-                {
-                    sum += diff;
-                }
-                else 
-                {
-                    sum = diff;
-                }
-                
-                if(sum > maxSum)
-                {
-                    maxSum = sum;
-                }
-            }
-
-            return maxSum < 0 ? 0 : maxSum;
         }
     }
 }
