@@ -109,7 +109,7 @@ namespace CodingProblems
 
             // Console.WriteLine(answer);
 
-            var answer = DispenseMinimumCoinsBottomUp(coins, amount);
+            var answer = DispenseMinimumCoinsTopDown(coins, amount);
 
             Console.WriteLine(answer);
         }
