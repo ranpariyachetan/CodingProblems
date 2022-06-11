@@ -1,6 +1,6 @@
 using System;
 
-namespace CodingProblems
+namespace CodingProblems.LinkedList
 {
     public class Node
     {
@@ -21,7 +21,7 @@ namespace CodingProblems
         public Node Next { get; set; }
     }
 
-    public class LinkedList
+    public partial class LinkedList
     {
         public static Node FindIntersection(Node head1, Node head2)
         {

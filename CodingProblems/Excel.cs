@@ -57,9 +57,9 @@ namespace CodingProblems
             while (n > 0)
             {
                 var rem = n % 26;
-                if(rem == 0)
+                if (rem == 0)
                 {
-                    result = (char)(65 + 25) + result;
+                    result = "z" + result;
                 }
                 else
                 {

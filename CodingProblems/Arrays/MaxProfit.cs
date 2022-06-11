@@ -44,7 +44,7 @@ namespace CodingProblems.Arrays
             arr = new[] { 80, 2, 6, 3, 100 };
             result = MaxProfitV1(arr);
 
-            Console.WriteLine("Max Profit: {0}", result);
+            Console.WriteLine("Max Profit With Diff: {0}", result);
 
             arr = new[] { 5, 5, 5, 5, 5 };
             result = MaxProfitV1(arr);
